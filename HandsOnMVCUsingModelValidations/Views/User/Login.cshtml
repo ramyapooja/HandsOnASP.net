@@ -1,0 +1,33 @@
+﻿@model HandsOnMVCUsingModelValidations.Models.User
+@{
+    ViewData["Title"] = "Login";
+    
+}
+
+<h1>Login</h1>
+@using(Html.BeginForm())
+{
+    <table class="table table-bordered">
+        <tr>
+            <td>@Html.DisplayNameFor(m=>m.Uname)</td>
+            <td>@Html.TextBox("Uname")</td>
+            <td>@Html.ValidationMessageFor(m=>m.Uname)</td>
+
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m=>m.Pwd)</td>
+            <td>@Html.Password("pwd")</td>
+            <td>@Html.ValidationMessageFor(m=>m.Pwd)</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <input type="submit" value="login" class="btn btn-primary" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="text-danger">@ViewData["err"]</span>
+            </td>
+        </tr>
+    </table>
+}

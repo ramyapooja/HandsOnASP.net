@@ -1,0 +1,9 @@
+﻿@model HandsOnMVCUsingModelValidations.Models.User
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Welcome @Html.DisplayFor(m=>m.Name)</h1>
+Password @Html.DisplayFor(m=>m.Pwd)
+@Html.ActionLink("LogOut","Login","User")
+

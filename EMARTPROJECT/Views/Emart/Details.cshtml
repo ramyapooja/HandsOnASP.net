@@ -1,0 +1,37 @@
+﻿@model EMARTPROJECT.Models.Seller
+
+@{
+    ViewData["Title"] = "Details";
+    var photopath = "~/Images/" + (Model.photopath ?? "Jerry.png");
+}
+
+
+
+
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.s_username</h1>
+            </div>
+
+            <div class="card-body text-center">
+                <img class="card-img-top" src="@photopath" asp-append-version="true" />
+
+                <h4> @Model.s_id</h4>
+                <h4> @Model.s_email_id</h4>
+
+
+            </div>
+            <div class="card-footer text-center">
+                <a asp-controller="Emart" asp-action="S_Index" class="btn btn-primary">Add items</a>
+                @*<a asp-controller="" asp-action="" class="btn btn-primary">Back</a>
+                    <a asp-controller="Seller" asp-action="" class="btn btn-primary">Back</a>*@
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

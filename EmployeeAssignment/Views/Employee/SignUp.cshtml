@@ -1,0 +1,39 @@
+﻿@model EmployeeAssignment.Models.Employee
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>SignUp</h1>
+@using (Html.BeginForm())
+{
+    <table class="table table-bordered">
+        <tr>
+            <td>Employee id</td>
+            <td>@Html.TextBoxFor(m=>m.Eid)</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>@Html.TextBoxFor(m=>m.Name)</td>
+        </tr>
+        <tr>
+            <td>Designation</td>
+            <td>@Html.DropDownListFor(m=>m.Designation,ViewBag.Designation as SelectList)</td>
+        </tr>
+        <tr>
+            <td>Project Name</td>
+            <td>@Html.DropDownListFor(m=>m.ProjectName,ViewBag.ProjectName as SelectList)</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>@Html.Password("pwd")</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Register" />
+            </td>
+            
+        </tr>
+       
+           </table>
+}

@@ -1,0 +1,61 @@
+﻿@model EMARTPROJECT.Models.Seller
+
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+<h1>SignUp</h1>
+
+<h4>Seller</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="S_SignUp">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="s_username" class="control-label"></label>
+                <input asp-for="s_username" class="form-control" />
+                <span asp-validation-for="s_username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="s_pwd" class="control-label"></label>
+                <input asp-for="s_pwd" class="form-control" />
+                <span asp-validation-for="s_pwd" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="GSTIN" class="control-label"></label>
+                <input asp-for="GSTIN" class="form-control" />
+                <span asp-validation-for="GSTIN" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="s_email_id" class="control-label"></label>
+                <input asp-for="s_email_id" class="form-control" />
+                <span asp-validation-for="s_email_id" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="sbank_accno" class="control-label"></label>
+                <input asp-for="sbank_accno" class="form-control" />
+                <span asp-validation-for="sbank_accno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="SignUp" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+            @ViewBag.message
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="S_Login">Login</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
